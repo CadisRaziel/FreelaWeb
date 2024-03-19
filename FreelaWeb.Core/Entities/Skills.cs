@@ -1,0 +1,13 @@
+﻿namespace FreelaWeb.Core.Entities
+{
+    public class Skills : BaseEntity
+    {
+        public Skills(string description)
+        {
+            Description = description; 
+            CreatedAt = DateTime.Now; 
+        }
+        public string Description { get; private set; }
+        public DateTime CreatedAt { get; private set; }
+    }
+}
