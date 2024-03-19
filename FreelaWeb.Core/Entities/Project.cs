@@ -1,16 +1,21 @@
-﻿namespace FreelaWeb.Core.Entities
+﻿using FreelaWeb.Core.Enums;
+
+namespace FreelaWeb.Core.Entities
 {
     public class Project : BaseEntity
     {
-        public Project(string title, string description, decimal budget, DateTime deliveryDate, int idOwner)
+        public Project(string title, string description, int idClient, int idFreelancer, decimal totalCost)
         {
             Title = title;
             Description = description;
-            Budget = budget;
-            DeliveryDate = deliveryDate;
-            IdOwner = idOwner;
+            IdClient = idClient;
+            IdFreelancer = idFreelancer;
+            TotalCost = totalCost;
+
             CreatedAt = DateTime.Now;
-            Active = true;
+            Status = ProjectStatusEnum.Created;
+            Comments = new List<ProjectComment>();
+                       
         }
         public string Title { get; private set; }
         public string Description { get; private set; }
